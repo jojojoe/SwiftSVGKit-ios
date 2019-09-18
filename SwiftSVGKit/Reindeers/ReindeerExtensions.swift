@@ -34,7 +34,7 @@ extension String {
     data.withUnsafeBytes({ (p: UnsafePointer<UInt8>) -> Void in
       stream.write(p, maxLength: data.count)
     })
-
+    //data.withUnsafeBytes { stream.write($0, maxLength: data.count) }
     stream.close()
 
     return UnsafePointer<UInt8>(buffer)
